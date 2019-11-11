@@ -1,0 +1,133 @@
+<!DOCTYPE>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ </head>
+ <body>
+    <script type="text/javascript">
+        var str = "Hello class ss";
+        document.write(str);
+        
+        var word_count = 0;
+        for (var i = 0; i < str.length; i++)
+            if (str.charAt(i) == ' ')
+                word_count++;
+        word_count++;
+        document.write("<p>Количество слов: " + word_count + "</p>");
+        
+        var letter_count = 0;
+        for (i = 0; i < str.length; i++)
+            if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z' || str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')
+                letter_count++;
+        document.write("<p>Количество буков: " + letter_count + "</p>");
+        
+        document.write("<p>URL: " + document.URL + "</p>");
+        var html = "";
+        for (i = document.URL.length; i >= 0 ; i--)
+            if (document.URL.charAt(i) == '.')
+            {
+                for (var j = 1; j < document.URL.length - i; j++)
+                    html += (document.URL.charAt(i + j));
+                break;
+            }
+        var filename = "";
+        for (; i >= 0; i--)
+        {
+            if (document.URL.charAt(i) == '/')
+            {
+                for (var j = 1; j < document.URL.length - i; j++)
+                    if (document.URL.charAt(i+j) == '.')
+                        break;
+                else
+                    filename += (document.URL.charAt(i + j));
+                break;
+            }
+        }
+        
+        var url = {};
+        url.url = document.URL;
+        url.name = filename;
+        url.extension = html;
+        document.write("<p>File extension: " + url.extension + "</p>");
+        document.write("<p>File name: " + url.name + "</p>");
+     </script> 
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <a name="html">Александр Елагин</a><br />
+     <a name="css">Норридж Сити</a><br />
+     <a name="js">Банальные вещи</a>
+
+<p>Количество анкоров:
+<script type="text/javascript">
+document.write(document.anchors.length);
+</script></p>
+ 
+<p>innerHTML первого анкора:
+<script type="text/javascript">
+document.write(document.anchors[0].innerHTML);
+</script>
+</p>
+
+
+     <p>Имя первой формы:
+<script type="text/javascript">
+document.write(document.forms[0].name);
+</script></p>
+     <img border="0" src="https://memepedia.ru/wp-content/uploads/2019/10/lovushka.jpg" width="300" height="330" /> 
+     <img border="0" src="http://img.travel.ru/images2/2014/06/object232703/001_308574_original.jpg" width="400" height="330" />
+     <img src="https://ldpr.ru/static/uploads/4f5baacca8a7504e85560ee4119f81ac.jpg" width="500" height="330" />
+  <p>Количество изображений:
+<script type="text/javascript">
+document.write(document.images.length);
+</script></p>
+     <p>Ширина первой картинки:
+<script type="text/javascript">
+document.write(document.images[0].width);
+</script></p>
+     
+     <p>Ширина самой широкой картинки:
+<script type="text/javascript">
+    var max=0;
+    for(var i = 0; i < document.images.length; i++)
+        if (max < document.images[i].width)
+            max = document.images[i].width;
+document.write(max);
+</script></p>
+     
+     <p>Сумма высот:
+<script type="text/javascript">
+    var sum = 0;
+    for(var i = 0; i < document.images.length; i++)
+        sum = sum + document.images[i].height;
+document.write(sum);
+</script></p>
+     
+     
+     <form name="1"></form><form name="2"></form><form name="4"></form><form name="5"></form><form name="6"></form><form name="7"></form><form name="8"></form><form name="9"></form><form name="10">
+     <p>Количество форм:
+<script type="text/javascript">
+document.write(document.forms.length+1);
+</script></p>
+<script type="text/javascript">
+    
+    var formname="";
+    for(i = 1; i < document.forms.lenght; i = i + 2)
+        {
+            formname = document.forms[i].name; 
+            document.write(formname + ", ");
+        }
+</script>
+ </body>
+</html>
